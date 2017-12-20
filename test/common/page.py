@@ -32,6 +32,9 @@ class Page(Browser):
     def execute(self, js, *args):
         self.driver.execute_script(js, *args)
 
+    def execute_async(self, js, *args):
+        self.driver.execute_async_script(js, *args)
+
     def move_to(self, element):
         ActionChains(self.driver).move_to_element(element).perform()
 
