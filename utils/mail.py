@@ -60,7 +60,8 @@ class Email:
 
         # 连接服务器并发送
         try:
-            smtp_server = smtplib.SMTP(self.server)  # 连接sever
+            smtp_server = smtplib.SMTP_SSL(self.server,465)  # 连接sever
+            #smtp_server.set_debuglevel(1)
         except (gaierror and error) as e:
             logger.exception('发送邮件失败,无法连接到SMTP服务器，检查网络以及SMTP服务器. %s', e)
         else:
@@ -79,12 +80,12 @@ class Email:
 if __name__ == '__main__':
     from utils.config import REPORT_PATH
     report = REPORT_PATH + '\\report.html'
-    e = Email(title='百度搜素测试报告',
+    e = Email(title='测试报告',
               message='这是今天的测试报告，请查收！',
-              receiver='396214358@qq.com',
-              server='',
-              sender='',
-              password='',
+              receiver='511572653@qq.com',
+              server='smtp.qq.com',
+              sender='511572653@qq.com',
+              password='lhmeizhxzqmvbjge',
               path=report
               )
     e.send()

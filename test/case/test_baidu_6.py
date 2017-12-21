@@ -8,6 +8,7 @@ from utils.mail import Email
 from test.page.baidu_result_page import BaiDuMainPage, BaiDuResultPage
 import sys
 
+
 class TestBaiDu(unittest.TestCase):
     URL = Config().get('URL')
     excel = DATA_PATH + '/baidu.xlsx'
@@ -35,15 +36,17 @@ class TestBaiDu(unittest.TestCase):
 
 if __name__ == '__main__':
     report = REPORT_PATH + '\\report.html'
+    print("start test ")
     with open(report, 'wb') as f:
-        runner = HTMLTestRunner(f, verbosity=2, title='从0搭建测试框架 灰蓝', description='修改html报告')
+        runner = HTMLTestRunner(f, verbosity=2, title='从0搭建测试框架Test', description='修改html报告')
         runner.run(TestBaiDu('test_search'))
-    # e = Email(title='百度搜素测试报告',
-    #           message='这是今天的测试报告，请查收！',
-    #           receiver='396214358@qq.com',
-    #           server='...',
-    #           sender='...',
-    #           password='...',
-    #           path=report
-    #           )
-    # e.send()
+        print("to send ")
+    e = Email(title='百度搜素测试报告',
+              message='这是今天的测试报告，请查收！',
+              receiver='511572653@qq.com',
+              server='smtp.qq.com',
+              sender='511572653@qq.com',
+              password='lhmeizhxzqmvbjge',
+              path=report
+              )
+    e.send()
