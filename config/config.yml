@@ -1,4 +1,5 @@
-URL: http://www.baidu.com
+URL: http://192.168.129.107:7950/abisweb
+TPIMAGE : C:\\test\\1.bmp
 log:
     file_name: test.log
     backup: 5

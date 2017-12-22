@@ -78,3 +78,28 @@
 2017-09-20 16:13:59,794 - framework - DEBUG - TCPClient Send xxxxx
 2017-09-20 16:13:59,794 - framework - DEBUG - TCPClient received {"code":-1, "message":"Data Error"}
 2017-09-20 16:13:59,794 - framework - DEBUG - TCPClient closed.
+2017-12-22 22:09:46,933 - framework - INFO - Selenium - 灰蓝 - CSDN博客
+2017-12-22 22:09:47,046 - framework - INFO - 灰蓝- CSDN博客
+2017-12-22 22:09:47,124 - framework - INFO - ...—— 教你在Windows上搭建Python+Selenium环境 - 灰蓝 - 博客...
+2017-12-22 22:09:47,204 - framework - INFO - selenium之 时间日期控件的处理 - CSDN博客
+2017-12-22 22:09:47,412 - framework - INFO - selenium之 autoit命令行参数 - 灰蓝 - CSDN博客
+2017-12-22 22:09:47,607 - framework - INFO - Python selenium 一定要会用selenium的... 来自t记得笑t - 微博
+2017-12-22 22:09:47,863 - framework - INFO - 灰蓝
+2017-12-22 22:09:47,949 - framework - INFO - 灰蓝- CSDN博客
+2017-12-22 22:09:48,018 - framework - INFO - 灰蓝- CSDN博客
+2017-12-22 22:09:48,094 - framework - INFO - selenium之 浏览器导航栏的三个按钮(back、forward、re..._CSDN博客
+2017-12-22 22:10:21,737 - framework - INFO - selenium 3.7.0 : Python Package Index
+2017-12-22 22:10:21,846 - framework - INFO - selenium 3.8.0 : Python Package Index
+2017-12-22 22:10:21,985 - framework - INFO - Selenium with Python — Selenium Python Bindings 2 ...
+2017-12-22 22:10:22,091 - framework - INFO - Python爬虫利器五之Selenium的用法 - 知行Lee - 博客园
+2017-12-22 22:10:22,208 - framework - INFO - 7. WebDriver API — Selenium Python Bindings 2 documentation
+2017-12-22 22:10:22,313 - framework - INFO - 2. Getting Started — Selenium Python Bindings 2 documentation
+2017-12-22 22:10:22,422 - framework - INFO - selenium + python自动化测试环境搭建 - 虫师 - 博客园
+2017-12-22 22:10:22,532 - framework - INFO - python中使用selenium - CSDN博客
+2017-12-22 22:10:22,643 - framework - INFO - Python selenium —— 教你在Windows上搭建Python+Selenium环境 -...
+2017-12-22 22:10:25,682 - framework - INFO - attach file C:\Users\han\PycharmProjects\Test_framework\report\report.html
+2017-12-22 22:10:27,199 - framework - INFO - 发送邮件"捺印测试报告"成功! 收件人：511572653@qq.com。如果没有收到邮件，请检查垃圾箱，同时检查收件人地址是否正确
+2017-12-22 22:16:14,572 - framework - INFO - attach file C:\Users\han\PycharmProjects\Test_framework\report\report.html
+2017-12-22 22:16:15,965 - framework - INFO - 发送邮件"捺印测试报告"成功! 收件人：511572653@qq.com。如果没有收到邮件，请检查垃圾箱，同时检查收件人地址是否正确
+2017-12-22 23:37:28,545 - framework - INFO - <test.page.abis_main_page.AbisMainPage object at 0x02522A70>
+2017-12-22 23:53:16,780 - framework - INFO - <test.page.abis_main_page.AbisMainPage object at 0x00AA2A70>
