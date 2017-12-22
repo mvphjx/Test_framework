@@ -25,4 +25,5 @@ if __name__ == '__main__':
 
     page=Login().run()
     print(page)
-    #page.quit();
+    page.quit()
+    print(page)

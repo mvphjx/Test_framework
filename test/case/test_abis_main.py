@@ -29,7 +29,6 @@ class TestAbisMain(unittest.TestCase):
     def test_abis(self):
             with self.subTest(data="TpScan"):
                 self.page = Login().run()
-                Login(self.page).run()
                 time.sleep(3)
                 self.tpcard_num = TpScan(self.page).run()
                 time.sleep(2)
