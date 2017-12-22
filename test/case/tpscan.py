@@ -12,6 +12,7 @@ from utils.config import DATA_PATH, REPORT_PATH
 class TestTpScan(unittest.TestCase):
     # URL = Config().get('URL')
     URL = "http://192.168.129.107:7950/abisweb"
+    FILE_PATH = 'C:\\test\\1.bmp'
     def login(self):
         # 登录
         print(self.URL)
@@ -36,7 +37,7 @@ class TestTpScan(unittest.TestCase):
         ComboBox = win32gui.FindWindowEx(ComboBoxEx32, 0, 'ComboBox', None)
         Edit = win32gui.FindWindowEx(ComboBox, 0, 'Edit', None)  # 上面三句依次寻找对象，直到找到输入框Edit对象的句柄
         button = win32gui.FindWindowEx(dialog, 0, 'Button', None)  # 确定按钮Button
-        win32gui.SendMessage(Edit, win32con.WM_SETTEXT, None, 'D:\\test\\1.bmp')  # 往输入框输入绝对地址
+        win32gui.SendMessage(Edit, win32con.WM_SETTEXT, None, self.FILE_PATH)  # 往输入框输入绝对地址
         win32gui.SendMessage(dialog, win32con.WM_COMMAND, 1, button)  # 按button
 
 
@@ -69,9 +70,13 @@ class TestTpScan(unittest.TestCase):
         #self.page.find_element(*(By.LINK_TEXT, cardNum)).click()
 
     def test_tp(self):
+
         self.login()
         time.sleep(3)
         cardNum = self.scan()
-        time.sleep(1)
+        self.sub_tearDown()
+
+        self.login()
+        time.sleep(3)
         self.query(cardNum)
         self.sub_tearDown()
