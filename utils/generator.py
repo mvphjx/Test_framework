@@ -10,6 +10,7 @@ def random_phone_number():
     return fake.phone_number()
 
 
+
 def random_name():
     """随机姓名"""
     return fake.name()
@@ -57,6 +58,7 @@ def factory_choice_generator(values):
 
 
 if __name__ == '__main__':
+    print(fake.get_providers())
     print(random_phone_number())
     print(random_name())
     print(random_address())

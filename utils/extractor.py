@@ -17,7 +17,7 @@ class JMESPathExtractor(object):
 
 if __name__ == '__main__':
     from utils.client import HTTPClient
-    res = HTTPClient(url='http://wthrcdn.etouch.cn/weather_mini?citykey=101010100').send()
+    res = HTTPClient(url='http://wthrcdn.etouch.cn/weather_mini?citykey=101010900').send()
     print(res.text)
     # {"data": {
     #     "yesterday": {"date": "17日星期四", "high": "高温 31℃", "fx": "东南风", "low": "低温 22℃", "fl": "<![CDATA[<3级]]>",
@@ -42,6 +42,7 @@ if __name__ == '__main__':
     # "desc": "OK"}
 
     j = JMESPathExtractor()
-    j_1 = j.extract(query='data.forecast[1].date', body=res.text)
+    city = j.extract(query='data.city', body=res.text)
+    j_1 = j.extract(query='data.forecast[0].date', body=res.text)
     j_2 = j.extract(query='data.ganmao', body=res.text)
-    print(j_1, j_2)
+    print(j_1,city, j_2)

@@ -1,3 +1,4 @@
+#YAML 是专门用来写配置文件的语言，非常简洁和强大，yaml层级关系和Python类似，都是用缩进表示，而不是像别的语言用括号或者标签来表示。
 URL: http://192.168.129.107:7950/abisweb
 TPIMAGE : C:\\test\\1.bmp
 log:

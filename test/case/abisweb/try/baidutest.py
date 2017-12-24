@@ -6,24 +6,33 @@ from test.page.abis_main_page import AbisMainPage
 from utils.config import Config
 from utils.log import logger
 
+
 class Login:
+    locator_result = (By.XPATH, '//div[contains(@class, "result")]/h3/a')
 
     def __init__(self):
         URL = "http://www.baidu.com"
-        self.page = AbisMainPage(browser_type='chrome').get(URL, maximize_window=True)
-
+        self.page = AbisMainPage(browser_type='ie').get(URL, maximize_window=True)
 
     def run(self):
         self.login()
         time.sleep(3)
-        return  self.page
+        return self.page
+
     def login(self):
         # 登录
         self.page.find_element(*(By.ID, 'kw')).send_keys("韩健祥")
         self.page.find_element(*(By.ID, 'su')).click()
-if __name__ == '__main__':
+        time.sleep(3)
+        links = self.page.find_elements(*self.locator_result)
+        links[0].click()
+        time.sleep(3)
 
-    page=Login().run()
+
+
+
+if __name__ == '__main__':
+    page = Login().run()
     print(page)
-    page.quit()
-    print(page)
+    # page.quit()
+    # print(page)
