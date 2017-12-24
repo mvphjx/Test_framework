@@ -2,12 +2,13 @@ from __future__ import print_function
 from keras.preprocessing.image import load_img, img_to_array
 from scipy.misc import imsave
 import numpy as np
-from scipy.optimize import fmin_bfgs
+#from scipy.optimize import fmin_l_bfgs_b
 import time
 import argparse
 
 from keras.applications import vgg16
 from keras import backend as K
+from scipy.optimize.lbfgsb import fmin_l_bfgs_b
 
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('base_image_path', metavar='base', type=str,
@@ -230,7 +231,7 @@ else:
 for i in range(iterations):
     print('Start of iteration', i)
     start_time = time.time()
-    x, min_val, info = fmin_bfgs(evaluator.loss, x.flatten(),
+    x, min_val, info = fmin_l_bfgs_b(evaluator.loss, x.flatten(),
                                      fprime=evaluator.grads, maxfun=20)
     print('Current loss value:', min_val)
     # save current generated image
