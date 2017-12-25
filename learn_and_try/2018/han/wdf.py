@@ -13,6 +13,7 @@ import math
 import subprocess
 import ssl
 import threading
+from urllib.parse import quote_plus
 
 DEBUG = False
 
