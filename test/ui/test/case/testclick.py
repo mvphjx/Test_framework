@@ -28,5 +28,5 @@ class TestGitHub():
 
 
 if __name__ == '__main__':
-    #TestGitHub("ie").run()
-    TestGitHub("chrome").run()
+    TestGitHub("ie").run()
+    #TestGitHub("chrome").run()

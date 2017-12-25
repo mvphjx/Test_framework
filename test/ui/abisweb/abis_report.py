@@ -1,4 +1,4 @@
-from test.case.test_abis_main import TestAbisMain
+from test.ui.abisweb.test_abis_main import TestAbisMain
 from utils.HTMLTestRunner_PY3 import HTMLTestRunner
 from utils.config import REPORT_PATH
 from utils.mail import Email

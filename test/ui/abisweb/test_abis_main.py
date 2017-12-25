@@ -3,9 +3,9 @@ import unittest
 
 from selenium.webdriver.common.by import By
 
-from test.case.abisweb.login import Login
-from test.case.abisweb.lpcase import LpCase
-from test.case.abisweb.tpscan import TpScan
+from test.ui.abisweb.case.login import Login
+from test.ui.abisweb.case.lpcase import LpCase
+from test.ui.abisweb.case.tpscan import TpScan
 from utils.config import Config, DATA_PATH
 
 
