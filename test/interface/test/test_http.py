@@ -2,7 +2,6 @@ import unittest
 
 from utils.assertion import assertHTTPCode
 from utils.client import HTTPClient
-from utils.config import Config
 from utils.log import logger
 
 
