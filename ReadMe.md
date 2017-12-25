@@ -3,6 +3,7 @@
 
 ## 技术栈概述
 - Python 3.6  （编程语言）
+   [Python入门](https://www.imooc.com/learn/177) [python进阶](https://www.imooc.com/learn/317)
 - selenium 3.8 （界面测试的插件）
 - PyYaml (解析yml的插件)
 - xlrd (解析excel的插件)

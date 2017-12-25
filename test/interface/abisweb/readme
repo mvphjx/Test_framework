@@ -1,0 +1,11 @@
+1 前置条件
+  abisweb web.xml  进行配置 配置为 dev（开发测试环境）
+  <!-- 生产环境：prod  开发测试环境：dev -->
+    <context-param>
+        <param-name>spring.profiles.default</param-name>
+        <param-value>dev</param-value>
+    </context-param>
+
+2 访问abisweb restful接口在线文档：
+  http://localhost:7950/abisweb/swagger-ui.html
+
