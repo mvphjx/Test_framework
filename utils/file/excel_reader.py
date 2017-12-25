@@ -1,7 +1,7 @@
 import os
 from xlrd import open_workbook
 
-from utils.file_reader import SheetTypeError
+from utils.file import SheetTypeError
 
 
 class ExcelReader:
