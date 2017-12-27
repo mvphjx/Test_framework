@@ -7,7 +7,7 @@ from utils.log import logger
 
 class TestHTTP(unittest.TestCase):
     URL1 = "http://www.baidu.com"
-    URL2 = "http://192.168.129.107:7950X/abisweb"
+    URL2 = "http://192.168.129.107:7950/abisweb"
     URL3 = "https://mvphjx.github.io/starDemo/LearnAndTest/notexist.html"
 
     def setUp(self):

@@ -1,13 +1,12 @@
 import time
-import unittest
+
+from selenium.webdriver.common.by import By
 
 from test.ui.abisweb.case.login import Login
 from test.ui.abisweb.case.tpimg_upload import tpimgUload
-from utils.log import logger
-from selenium.webdriver.common.by import By
-
-
+from utils import generator
 from utils.config import Config
+from utils.log import logger
 
 
 class TpScan:
@@ -33,7 +32,7 @@ class TpScan:
         self.page.execute(' $("#ScanObjectTree_1_span").dblclick()')
         self.page.find_element(*(By.ID, 'AutoSplit')).click()
         self.page.find_element(*(By.ID, 'ShowTxt')).click()
-        self.page.find_element(*(By.ID, 'NAME')).send_keys('seleniumTpTest')
+        self.page.find_element(*(By.ID, 'NAME')).send_keys(generator.random_name())
         time.sleep(1)
         personNum = self.page.find_element(*(By.ID, 'PERSON_NUM')).get_attribute("value")
         cardNum = self.page.find_element(*(By.ID, 'CARD_NUM')).get_attribute("value")

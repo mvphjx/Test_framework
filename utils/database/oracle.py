@@ -14,3 +14,5 @@ sql = 'select * from USER_VIEW'
 cursor.execute(sql)  # 执行sql 语句
 for values in cursor:
     print("Row Value:", values)
+
+

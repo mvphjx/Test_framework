@@ -4,6 +4,7 @@ import unittest
 from selenium.webdriver.common.by import By
 
 from test.ui.abisweb.case.login import Login
+from utils.assertion import assertWebDialogMsg
 from utils.config import Config
 
 
@@ -30,7 +31,7 @@ class LpCase:
         self.page.find_element(*(By.ID, 'submit1')).click()
         time.sleep(1)
         msg = self.page.find_element(*(By.CLASS_NAME, 'dialogtext'))
-        print(msg.text)
+        assertWebDialogMsg(msg.text)
         return self.ABIS_CE_NUM
 
 if __name__ == '__main__':
