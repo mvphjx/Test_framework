@@ -12,7 +12,7 @@ log:
 
 ip: 127.0.0.1
 port: 8080
-
-oracle_url : 192.168.129.107/orapuabis
+#   192.168.129.135/hsabispalm  192.168.129.107/orapuabis
+oracle_url : 192.168.129.135/hsabispalm
 oracle_username : hsabisadm
 oracle_password : hsabis2013
