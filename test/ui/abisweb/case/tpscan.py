@@ -45,4 +45,4 @@ if __name__ == '__main__':
     URL = Config().get('URL')
     page = Login().run()
     TpScan(page).run()
-    #page.quit();
+    page.quit();

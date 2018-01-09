@@ -1,5 +1,7 @@
 #YAML 是专门用来写配置文件的语言，非常简洁和强大，yaml层级关系和Python类似，都是用缩进表示，而不是像别的语言用括号或者标签来表示。
 URL: http://192.168.129.107:7950/abisweb
+UserName : han
+PassWord : 4690255
 TPIMAGE : C:\test\1.bmp
 CE_NUM : A3206020008882009050999
 ABIS_CE_NUM : A3206020008882009050999
@@ -16,3 +18,5 @@ port: 8080
 oracle_url : 192.168.129.135/hsabispalm
 oracle_username : hsabisadm
 oracle_password : hsabis2013
+USER_ID : han
+

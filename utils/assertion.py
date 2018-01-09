@@ -1,6 +1,7 @@
 """
 在这里添加各种自定义的断言，断言失败抛出AssertionError就OK。
 """
+from selenium.webdriver.common.by import By
 
 
 def assertHTTPCode(response, code_list=None):
@@ -16,3 +17,17 @@ def assertWebDialogMsg(msg):
     for keyWord in errorWords:
         if keyWord in msg:
             raise AssertionError('返回错误信息：' + msg)
+
+'''
+表格查询测试 判断是否检索成功
+'''
+def assertWebTableSearch(page):
+    #总数
+    count = page.find_element(*(By.CSS_SELECTOR, '.RecordCnt'))
+    if count.text!= '总数:1':
+        raise AssertionError('列表查询数据总数为' + count.text)
+    elements = page.find_elements(*(By.CSS_SELECTOR, '.cell_min_w'))
+    result = '查询结果：'
+    for element in elements:
+        result=result+element.text+" "
+    print(result)

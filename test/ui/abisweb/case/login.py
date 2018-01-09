@@ -11,8 +11,8 @@ class Login:
     def __init__(self):
         URL = Config().get('URL')
         self.page = AbisMainPage(browser_type='ie').get(URL, maximize_window=True)
-
-
+        self.UserName = Config().get('UserName')
+        self.PassWord = Config().get('PassWord')
     def run(self):
         self.login()
         time.sleep(3)
@@ -22,11 +22,10 @@ class Login:
         locator_UserName = (By.ID, 'UserName')
         locator_PassWord = (By.ID, 'PassWord')
         locator_login = (By.ID, 'loginbutton')
-        self.page.find_element(*locator_UserName).send_keys('han')
-        self.page.find_element(*locator_PassWord).send_keys('4690255')
+        self.page.find_element(*locator_UserName).send_keys(self.UserName)
+        self.page.find_element(*locator_PassWord).send_keys(self.PassWord)
         self.page.find_element(*locator_login).click()
 if __name__ == '__main__':
-
     page=Login().run()
     logger.info(page)
     #page.quit();

@@ -1,5 +1,12 @@
+import cx_Oracle
+
+from utils.config import Config
 from utils.database.util.oracle import OracleConnection
 
+oracle_url = Config().get("oracle_url")
+oracle_username = Config().get("oracle_username")
+oracle_password = Config().get("oracle_password")
+connection = cx_Oracle.connect(oracle_username, oracle_password, oracle_url)  # 创建连接
 connection = OracleConnection().connection
 
 sql_hit = "SELECT * FROM HIT_STAT_LTL_HIT_INFO WHERE BATCH_NUM = 'zhejiang830LT'  ";
@@ -61,4 +68,4 @@ for task_values in tasks:
 
 # 结果进行处理
 print("所有查询比中数：" + str(len(result)))
-print("重复查询过滤后比中数：" + str(len(result_first_src_card_nums)))
+print("过滤重复查询后比中数：" + str(len(result_first_src_card_nums)))
