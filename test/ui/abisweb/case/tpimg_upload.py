@@ -19,9 +19,7 @@ class tpimgUload:
     @async
     def operation_dialog(self):
         # 操作系统文件上传
-        print(1)
-        time.sleep(2)
-        print(2)
+        time.sleep(3)
         # win32gui
         dialog = win32gui.FindWindow('#32770', '打开')  # 对话框
         ComboBoxEx32 = win32gui.FindWindowEx(dialog, 0, 'ComboBoxEx32', None)
@@ -33,4 +31,4 @@ class tpimgUload:
 
 
 if __name__ == '__main__':
-    tpimgUload.operation_dialog("1", "2")
+    tpimgUload("test").operation_dialog()
