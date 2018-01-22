@@ -1,0 +1,63 @@
+﻿1获取页面信息
+
+
+接口测试
+http://server.goteaming.com.cn/Player_Base/Game/ActivityFinish
+参数：(如果不加参数，会拿到他们所有数据)
+GameId:e6693b01-7b38-4413-a991-1d268190f190
+方式：POST
+Header：
+User-Agent: Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-S5660 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MicroMessenger/4.5.255
+Response：
+                <div class="container">
+                    <div class="Team active" gtid="a614ae1c-597a-431d-8134-de681cdabca3">队伍3</div>
+                    <div class="Team" gtid="631c027a-e792-4183-8b92-ae226c48ea83">队伍5</div>
+                    <div class="Team" gtid="fa08a327-7bd8-4846-987d-1b8bd4d2061d">队伍4</div>
+                    <div class="Team" gtid="a840bc77-07b8-4d49-9047-22176dda6986">队伍1</div>
+                    <div class="Team" gtid="8236dee0-3ab8-45ae-9cc8-2b439588061c">队伍2</div>
+
+                </div>
+2 获取队伍的图像和视频地址
+
+接口测试
+http://server.goteaming.com.cn/Player_Base/Game/GetTeamDataSource
+参数：
+GameId:e6693b01-7b38-4413-a991-1d268190f190
+GTId:a840bc77-07b8-4d49-9047-22176dda6986
+方式：POST
+Header：
+User-Agent: Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-S5660 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MicroMessenger/4.5.255
+Response：
+                json...
+3 get方式获取单个图片/视频资源
+图片没有User-Agent校验；视频依旧需要User-Agent
+
+
+
+
+
+
+
+
+
+无人工干预，卡片录入功能：
+
+重卡功能
+0 重卡列表完善 超链接
+1 选中2-张卡片对比显示
+2 人员唯一档案列表
+3 用重卡的人员唯一档案列表
+4 人员唯一档案详情页
+（合并 分解重卡信息）
+（卡片列表，案件列表，比中信息列表）
+5 现场卡片列表视图  增加  比中信息（关联LP_CARD_HIT_INFO）
+6 案件列表视图   增加比中信息
+7 
+	
+	人员唯一档案（UNI_PERSON）查询接口 （根据id查询概要文本信息，卡片列表，案件列表，比中列表） 参考RCP比对任务的展示，可以先返回一个整体对象
+将一个/多个人员卡片，合并到指定人员档案； 将一个/多个人员卡片，拆分成一个人员档案；
+人员唯一档案视图
+现场卡片列表视图  增加  比中信息（关联LP_CARD_HIT_INFO）
+案件列表视图   增加比中信息
+
+
