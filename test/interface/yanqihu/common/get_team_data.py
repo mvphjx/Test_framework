@@ -17,7 +17,8 @@ class GetTeamData:
         self.url = 'http://server.goteaming.com.cn/Player_Base/Game/GetTeamDataSource'
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-S5660 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MicroMessenger/4.5.255'}
-        self.basepath='C:/test/'
+        self.basepath = 'C:/test/'
+
     def getJson(self, GTId):
         self.params['GTId'] = GTId
         client = HTTPClient(url=self.url, method='POST', headers=self.headers)
@@ -29,26 +30,25 @@ class GetTeamData:
         return PicList, VedioList
 
     def getImg(self, path):
-        client = HTTPClient(url=self.base_url+path, method='Get')
+        client = HTTPClient(url=self.base_url + path, method='Get')
         res = client.send(params=self.params)
         return res
 
     def getVedio(self, path):
-        client = HTTPClient(url=self.base_url+path, method='Get', headers=self.headers)
+        client = HTTPClient(url=self.base_url + path, method='Get', headers=self.headers)
         res = client.send(params=self.params)
         return res
 
-
-    def saveVedio(self, path,name):
+    def saveVedio(self, path, name):
         self.mkdir(self.basepath + self.params['GTId'])
-        urllib.request.urlretrieve(self.base_url+path, self.basepath + self.params['GTId']+'%s.mp4' % (name))
+        urllib.request.urlretrieve(self.base_url + path, self.basepath + self.params['GTId'] + '%s.mp4' % (name))
 
-     # 文件流,文件名-保存
-    def save_file(self,res,fileName,groupname):
+    # 文件流,文件名-保存
+    def save_file(self, res, fileName, groupname):
         self.mkdir(self.basepath + groupname)
         with open(self.basepath + groupname + '/' + fileName, "wb") as code:
             code.write(res.content)
-        print (self.basepath + groupname+'/'+fileName)
+        print(self.basepath + groupname + '/' + fileName)
 
     # 创建新目录
     def mkdir(self, path):
@@ -68,19 +68,18 @@ class GetTeamData:
             return False
 
 
-
-
-
 if __name__ == '__main__':
     PicList, VedioList = GetTeamData().getJson("631c027a-e792-4183-8b92-ae226c48ea83")
-    #PicList, VedioList = GetTeamData().getJson("2cba2415-0730-4c89-ba5d-83843502c90b")
+    PicList, VedioList = GetTeamData().getJson("2cba2415-0730-4c89-ba5d-83843502c90b")
     print(PicList)
     for pic in PicList:
-        print(pic['TaskName'],pic['Path'])
-        res=GetTeamData().getImg(pic['Path'])
-        GetTeamData().save_file(res,pic['TaskName']+'.jpg','队名XXX')
+        res = GetTeamData().getImg(pic['Path'])
+        if res.status_code == 200:
+            print(pic['TaskName'], pic['Path'])
+            GetTeamData().save_file(res, pic['TaskName'] + '.jpg', '队名XXX')
     print(VedioList)
     for vedio in VedioList:
-        print(vedio['TaskName'],vedio['Path'])
         res = GetTeamData().getVedio(vedio['Path'])
-        GetTeamData().save_file(res,vedio['TaskName']+".mp4",'队名XXX')
+        if res.status_code == 200:
+            print(vedio['TaskName'], vedio['Path'])
+            GetTeamData().save_file(res, vedio['TaskName'] + ".mp4", '队名XXX')
