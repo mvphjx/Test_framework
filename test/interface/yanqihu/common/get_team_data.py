@@ -1,6 +1,8 @@
 import os
 import urllib
 
+import re
+
 from utils.client import HTTPClient
 from utils.extractor import JMESPathExtractor
 import json

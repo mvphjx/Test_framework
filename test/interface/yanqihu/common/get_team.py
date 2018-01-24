@@ -30,4 +30,9 @@ class GetTeam:
 
 if __name__ == '__main__':
     teams = GetTeam().getTeams()
-    print(teams[1])
+    i = 0
+    for team in teams:
+        print(team)
+        i = i + 1
+        if i > 1000:
+            break
