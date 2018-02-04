@@ -1,0 +1,3 @@
+pygal==2.4.0
+requests==2.18.4
+Pizza==0.1.2
