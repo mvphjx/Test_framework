@@ -102,4 +102,9 @@ pycharm启动web服务器，需要增加配置例如：runserver 127.0.0.1:80
 
 learning_logs/urls.py（url路由配置文件）
 适用于Django 1.X版本，与十二月 2, 2017发布的Django 2.0配置有差异，如果版本不匹配无法运行 
-![](./img/手动安装包以及版本选择.png)        
+![](./img/手动安装包以及版本选择.png)
+
+如果报错no such table: ***,
+请找到对应的manage.py 使用命令行创建默认库 
+
+    python manage.py migrate        
