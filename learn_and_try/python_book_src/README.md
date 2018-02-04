@@ -1,32 +1,6 @@
 Python Crash Course
 ===
 - [最初版本源代码](https://github.com/ehmatthes/pcc) 
-- 使用pycharm进行包管理
-
-自动安装包
-打开 requirements.txt，点击install
-
-
-![](img/自动安装包.png)
-
-
-
-半自动安装 alt+enter
-
-
-![](img/半自动安装包1.png)
-![](img/半自动安装包2.png)
-
-
-
-手动安装
-
-python库管理
-![](img/python库管理.png)
-手动搜索安装包以及版本选择
-![](img/手动安装包以及版本选择.png)
-Virtual Environment
-![](img/Virtual Environment.png)
 
 
 A Hands-On, Project-Based Introduction to Programming
@@ -70,3 +44,62 @@ When packages are updated you have the option of using the version that was feat
 
 A list of updates is kept [here](http://ehmatthes.github.io/pcc/updates.html).
 
+
+
+
+使用pycharm进行包管理
+===
+- 自动安装包
+打开 requirements.txt，点击install
+
+
+![](img/自动安装包.png)
+
+
+
+- 半自动安装 alt+enter
+
+
+![](img/半自动安装包1.png)
+![](img/半自动安装包2.png)
+
+
+
+- 手动安装
+
+python库管理
+![](img/python库管理.png)
+手动搜索安装包以及版本选择
+![](img/手动安装包以及版本选择.png)
+Virtual Environment
+![](img/Virtual Environment.png)
+
+
+python文件之间的引用
+===
+- 1 可以使用绝对路径(推荐使用)
+
+例如chapter_14/alien_invasion中：
+
+        from learn_and_try.python_book_src.chapter_14.settings import Settings
+        ...
+- 2 可以使用相对路径
+
+例如chapter_18/learning_logs/admin.py中：
+
+        from .models import Topic, Entry
+        ...  
+        #.表示本层目录
+        #./表示上层目录      
+
+重要提示
+---
+18-20主要讲述搭建web服务器，是否创建Virtual Environment，不影响搭建web服务器.
+
+pycharm启动web服务器，需要增加配置例如：runserver 127.0.0.1:80
+![](./img/运行配置1.png)
+![](./img/运行配置2.png)
+
+learning_logs/urls.py（url路由配置文件）
+适用于Django 1.X版本，与十二月 2, 2017发布的Django 2.0配置有差异，如果版本不匹配无法运行 
+![](./img/手动安装包以及版本选择.png)        

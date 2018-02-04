@@ -1,5 +1,0 @@
-pygal==2.4.0
-requests==2.18.4
-pizza==0.1.2
-Django==2.0.2
-six==1.11.0
