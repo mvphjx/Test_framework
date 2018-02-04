@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
                 ('text', models.TextField()),
                 ('date_added', models.DateTimeField(auto_now_add=True)),
-                ('topic', models.ForeignKey(to='learning_logs.Topic')),
+                ('topic', models.ForeignKey(to='learning_logs.Topic',on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'entries',

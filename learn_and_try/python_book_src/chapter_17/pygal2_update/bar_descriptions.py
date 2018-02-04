@@ -15,4 +15,4 @@ plot_dicts = [
     ]
 
 chart.add('', plot_dicts)
-chart.render_to_file('bar_descriptions.svg')
+chart.render_to_file('../img/bar_descriptions2.svg')

@@ -23,6 +23,7 @@
 - test 主目录，包含接口测试 ui测试
 - utils 工具类 包含一些测试/项目使用的小工具。例如 yml  Excel文件解析，发送邮件，之后按需扩充
 - learn and try 学习/尝试写一些不成熟的工具
+    例如 python_book_src为 《Python入门》源代码[最初版本源代码](https://github.com/ehmatthes/pcc) 
 
 
 

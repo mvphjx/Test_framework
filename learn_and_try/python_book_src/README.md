@@ -1,5 +1,33 @@
 Python Crash Course
 ===
+- [最初版本源代码](https://github.com/ehmatthes/pcc) 
+- 使用pycharm进行包管理
+
+自动安装包
+打开 requirements.txt，点击install
+
+
+![](img/自动安装包.png)
+
+
+
+半自动安装 alt+enter
+
+
+![](img/半自动安装包1.png)
+![](img/半自动安装包2.png)
+
+
+
+手动安装
+
+python库管理
+![](img/python库管理.png)
+手动搜索安装包以及版本选择
+![](img/手动安装包以及版本选择.png)
+Virtual Environment
+![](img/Virtual Environment.png)
+
 
 A Hands-On, Project-Based Introduction to Programming
 ---

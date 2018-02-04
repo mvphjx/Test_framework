@@ -17,12 +17,12 @@ repo_dicts = response_dict['items']
 names, plot_dicts = [], []
 for repo_dict in repo_dicts:
     names.append(repo_dict['name'])
-    
+
     plot_dict = {
         'value': repo_dict['stargazers_count'],
-        'label': repo_dict['description'],
+        'label': repo_dict['description'] if repo_dict['description'] != None else "description is empty",
         'xlink': repo_dict['html_url'],
-        }
+    }
     plot_dicts.append(plot_dict)
 
 # Make visualization.
@@ -43,4 +43,4 @@ chart.title = 'Most-Starred Python Projects on GitHub'
 chart.x_labels = names
 
 chart.add('', plot_dicts)
-chart.render_to_file('python_repos.svg')
+chart.render_to_file('img/python_repos.svg')

@@ -25,7 +25,7 @@ SECRET_KEY = 'make_your_own_secret_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     
     # My apps
     'learning_logs',
-    'users',
+    'users'
 )
 
 MIDDLEWARE_CLASSES = (

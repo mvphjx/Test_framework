@@ -10,6 +10,26 @@ In this chapter you'll use Django to build Learning Log, a simple web applicatio
     - [Creating a virtual environment with virtualenv](#creating-a-virtual-environment-with-virtualenv)
 - [Installing Django](#installing-django)
 
+重要提示
+---
+18-20主要讲述搭建web服务器，是否创建Virtual Environment，不影响搭建web服务器.
+
+pycharm启动web服务器，需要增加配置例如：runserver 127.0.0.1:80
+![](./img/运行配置1.png)
+![](./img/运行配置2.png)
+
+learning_logs/urls.py（url路由配置文件）
+适用于Django 1.X版本，与十二月 2, 2017发布的Django 2.0配置有差异，如果版本不匹配无法运行 
+![](./img/手动安装包以及版本选择.png)
+
+
+
+如果报错no such table: learning_logs_topic：
+请使用命令行创建默认库 
+
+    python manage.py migrate
+
+
 Creating a Virtual Environment
 ---
 
