@@ -12,3 +12,5 @@ psycopg2>=2.6.1
 pygame==1.9.3
 pygal-maps-world==1.0.2
 matplotlib==2.1.1
+selenium==3.8.0
+pyperclip==1.6.0
