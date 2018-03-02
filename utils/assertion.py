@@ -17,11 +17,12 @@ def assertWebDialogMsg(msg):
     for keyWord in errorWords:
         if keyWord in msg:
             raise AssertionError('返回错误信息：' + msg)
+    print(msg)
 
 '''
 表格查询测试 判断是否检索成功
 '''
-def assertWebTableSearch(page):
+def assertWebTableSearchOne(page):
     #总数
     count = page.find_element(*(By.CSS_SELECTOR, '.RecordCnt'))
     if count.text!= '总数:1':

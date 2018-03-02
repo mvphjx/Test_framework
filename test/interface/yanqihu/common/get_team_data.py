@@ -71,8 +71,9 @@ class GetTeamData:
 
 
 if __name__ == '__main__':
-    PicList, VedioList = GetTeamData().getJson("631c027a-e792-4183-8b92-ae226c48ea83")
-    PicList, VedioList = GetTeamData().getJson("2cba2415-0730-4c89-ba5d-83843502c90b")
+    #葬爱家族ying哥15cf1935098a4027b84f1096370ea6fc
+    #PicList, VedioList = GetTeamData().getJson("631c027a-e792-4183-8b92-ae226c48ea83")
+    PicList, VedioList = GetTeamData().getJson("15cf1935-098a-4027-b84f-1096370ea6fc")
     print(PicList)
     for pic in PicList:
         res = GetTeamData().getImg(pic['Path'])

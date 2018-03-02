@@ -1,7 +1,10 @@
 Python Crash Course（Python编程：从入门到实践）
 -------
 
-===
+
+
+- 中文版电子书下载地址：https://pan.baidu.com/s/1jJt6bxs  密码epmc
+
 - [最初版本源代码](https://github.com/ehmatthes/pcc) 
 
 
