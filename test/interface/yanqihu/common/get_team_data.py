@@ -6,6 +6,7 @@ import re
 from utils.client import HTTPClient
 from utils.extractor import JMESPathExtractor
 import json
+import logging
 
 '''
 通过队伍id 队伍的图片视频信息
@@ -19,13 +20,12 @@ class GetTeamData:
         self.url = 'http://server.goteaming.com.cn/Player_Base/Game/GetTeamDataSource'
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-S5660 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MicroMessenger/4.5.255'}
-        self.basepath = 'C:/test/'
+        self.basepath = 'd:/test/'
 
     def getJson(self, GTId):
         self.params['GTId'] = GTId
         client = HTTPClient(url=self.url, method='POST', headers=self.headers)
         res = client.send(params=self.params)
-        print(res.text)
         j = JMESPathExtractor()
         VedioList = j.extract(query='VedioList[]', body=res.text)
         PicList = j.extract(query='PicList[]', body=res.text)
@@ -50,7 +50,7 @@ class GetTeamData:
         self.mkdir(self.basepath + groupname)
         with open(self.basepath + groupname + '/' + fileName, "wb") as code:
             code.write(res.content)
-        print(self.basepath + groupname + '/' + fileName)
+        logging.info('文件保存成功：'+self.basepath + groupname + '/' + fileName)
 
     # 创建新目录
     def mkdir(self, path):
@@ -78,11 +78,11 @@ if __name__ == '__main__':
     for pic in PicList:
         res = GetTeamData().getImg(pic['Path'])
         if res.status_code == 200:
-            print(pic['TaskName'], pic['Path'])
+            print('正在获取：'+pic['TaskName'], pic['Path'])
             GetTeamData().save_file(res, pic['TaskName'] + '.jpg', '队名XXX')
     print(VedioList)
     for vedio in VedioList:
         res = GetTeamData().getVedio(vedio['Path'])
         if res.status_code == 200:
-            print(vedio['TaskName'], vedio['Path'])
+            print('正在获取：'+vedio['TaskName'], vedio['Path'])
             GetTeamData().save_file(res, vedio['TaskName'] + ".mp4", '队名XXX')

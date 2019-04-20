@@ -11,8 +11,11 @@ class GetTeam:
         self.url = 'http://server.goteaming.com.cn/Player_Base/Game/ActivityFinish'
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-S5660 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MicroMessenger/4.5.255'}
+        # 雁栖湖 2017
         self.params = {'GameId': 'e6693b01-7b38-4413-a991-1d268190f190'}
-        self.params = {}
+        # 十渡  201904
+        self.params = {'GameId': '9468190e-18bd-4bab-91d5-047f0f4d2289'}
+        # self.params = {}
 
     def getTeams(self):
         client = HTTPClient(url=self.url, method='GET')
