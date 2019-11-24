@@ -46,6 +46,13 @@ class Logger(object):
             file_handler.setFormatter(self.formatter)
             file_handler.setLevel(self.file_output_level)
             self.logger.addHandler(file_handler)
+            sh = logging.StreamHandler()  # 往屏幕上输出
+            sh.setFormatter(self.formatter)  # 设置屏幕上显示的格式
+            self.logger.addHandler(sh)
+
         return self.logger
 
 logger = Logger().get_logger()
+
+if __name__ == '__main__':
+    logger.info("123456")
